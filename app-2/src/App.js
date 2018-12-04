@@ -6,16 +6,43 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <DisplayArray />
       </div>
     );
   }
 }
 
 export default App;
+
+class DisplayArray extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      myArray: ['dog', 'cat', 'frog', 'horse', 'cow']
+    }
+  }
+
+  // displayList() {
+  //   console.log('displayList')
+  //   {
+  //     this.state.myArray.map((i) => (
+  //       <h2>{i}</h2>
+  //     )))
+  //   }
+  //   </div >
+
+  // }
+
+  render() {
+    let list = this.state.myArray.map((arr) => (<h2>{arr}</h2>))
+
+    return (
+      <div>
+       {list}
+      </div>
+    )
+  }
+}
+
+
